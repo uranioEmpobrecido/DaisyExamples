@@ -1,0 +1,23 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Cortex Debug",
+        "cwd": "${fileDirname}",
+        "executable": "${fileDirname}/build/Digimon-poly-plaits.elf",
+        "request": "launch",
+        "type": "cortex-debug",
+        "servertype": "openocd",
+        "device": "STM32H750VB",
+        "runToMain": true,
+        "configFiles": [
+          "${env:OPENOCD_SCRIPTS}/interface/stlink.cfg",
+          "${env:OPENOCD_SCRIPTS}/target/stm32h7x.cfg"
+        ],
+        "svdFile": "${env:DAISYSDK}/STM32H750x.svd"
+      }
+    ]
+  }
